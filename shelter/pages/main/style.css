@@ -1,12 +1,14 @@
-.not-only .header .logo .title .logo-title, .not-only .content h2 {
+h3, .not-only .header .logo .title .logo-title, .not-only .content h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
 }
 
-.not-only .header .nav-menu .nav-list .nav-item, .not-only .content p {
+.not-only .header .nav-menu .nav-list .nav-item, .not-only .content p, .about .about-content .content .subheading {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
+  font-size: 15px;
+  line-height: 160%;
 }
 
 body {
@@ -14,8 +16,21 @@ body {
   width: auto;
 }
 
+h1 {
+  letter-spacing: 0.06em;
+  line-height: 110%;
+}
+
 h2 {
   font-size: 44px;
+}
+
+h3 {
+  font-size: 35px;
+  color: color-dark-1;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  margin: 0px;
 }
 
 .button {
@@ -197,5 +212,66 @@ h2 {
 .not-only img {
   width: 698px;
   height: 728px;
+}
+
+.about {
+  width: 1280px;
+  height: 588px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about img {
+  width: 300px;
+  height: 408px;
+  margin-left: 175px;
+}
+
+.about .about-content {
+  width: 1200px;
+  height: 408px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about .about-content .content {
+  width: 430px;
+  height: 380px;
+  margin-left: 120px;
+  margin-right: 175px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about .about-content .content .heading {
+  width: 360px;
+  height: 90px;
+}
+
+.about .about-content .content .subheading {
+  width: 100%;
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */

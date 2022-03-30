@@ -1,3 +1,5 @@
+$color-dark-1: #545454;
+
 %georia-regular-font {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
@@ -18,6 +20,8 @@
 %arial-regular-font{
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
+  font-size: 15px;
+  line-height: 160%;
 }
 
 %arial-italic-font{
@@ -30,8 +34,22 @@ body {
   width: auto;
 }
 
-h2{
+h1{
+  letter-spacing: 0.06em;
+  line-height: 110%;
+}
+
+h2{  
   font-size: 44px;
+}
+
+h3{
+  @extend %georia-regular-font;
+  font-size: 35px;
+  color: color-dark-1;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  margin: 0px;
 }
 
 .button {
@@ -175,4 +193,47 @@ h2{
     height: 728px;
   }
 
+}
+
+.about{
+  width: 1280px;
+  height: 588px;
+  margin: auto;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+
+    img{
+      width: 300px;
+      height: 408px;
+      margin-left: 175px;
+    }
+
+  .about-content{
+    width: 1200px;
+    height: 408px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+   .content{
+     width: 430px;
+     height: 380px;
+     margin-left: 120px;
+     margin-right: 175px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     .heading{
+       width: 360px;
+       height: 90px;
+     }
+     .subheading{
+       width: 100%;
+       height: auto;
+       @extend %arial-regular-font;
+     }
+   }
+  }
 }
