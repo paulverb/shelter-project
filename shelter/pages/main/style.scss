@@ -1,4 +1,6 @@
 $color-dark-1: #545454;
+$color-light-1: #F6F6F6;
+$color-light-s: #FAFAFA;
 
 %georia-regular-font {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -21,7 +23,7 @@ $color-dark-1: #545454;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 15px;
-  line-height: 160%;
+  //line-height: 160%;
 }
 
 %arial-italic-font{
@@ -56,10 +58,28 @@ h3{
   border-radius: 100px;
   height: 52px;
   color: #292929;
+  border: none;
 }
 
 .button-primary {
   background-color: #F1CDB3;
+}
+
+.button-secondary {
+  border: 2px solid #F1CDB3;
+  background-color: transparent;
+  width: 187px;
+}
+
+.button-arrow{
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  font-weight: bold;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .not-only {
@@ -235,5 +255,75 @@ h3{
        @extend %arial-regular-font;
      }
    }
+  }
+}
+
+.pets{
+  width: auto;
+  height: 797px;
+  background-color: $color-light-1;
+  padding-top: 80px;
+  
+  // margin-left: auto;
+  // margin-right: auto;
+  
+  .pets-content{
+    width: 1200px;
+    height: 697px;
+    margin: 0px auto;
+    //margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .button{
+      //display: flex;
+      height: 52px;
+    }
+    .heading{
+      width: 400px;
+      height: 90px;
+      text-align: center;  
+      margin: 0px auto 60px;    
+    }
+    .slider{
+      width: 1200px;
+      height: 435px;
+      margin: 0px auto 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .card-container{
+        width: 990px;
+        display: flex;        
+        justify-content: space-between;
+        .card{
+          width: 270px;
+          height: 435px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: $color-light-s;
+          .pet-name{
+            @extend %georia-regular-font;
+            color: $color-dark-1;
+            font-size: 20px;
+            line-height: 23px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+          }
+          .pet-img{
+            width: 270px;
+            height: 270px;
+          }
+        }
+      }
+     
+
+    }
+    .button-primary{
+      width: 261px;
+      height: 52px;
+    }
   }
 }
