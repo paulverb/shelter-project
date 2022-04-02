@@ -1,4 +1,4 @@
-h3, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name {
+h3, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
@@ -64,6 +64,12 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: transparent;
+}
+
+.button-arrow:hover {
+  background-color: #FDDCC4;
+  cursor: pointer;
 }
 
 .not-only {
@@ -373,6 +379,14 @@ h3 {
   background-color: #FAFAFA;
 }
 
+.pets .pets-content .slider .card-container .card:hover {
+  cursor: pointer;
+}
+
+.pets .pets-content .slider .card-container .card:hover .button {
+  background-color: #FDDCC4;
+}
+
 .pets .pets-content .slider .card-container .card .pet-name {
   color: #545454;
   font-size: 20px;
@@ -389,5 +403,75 @@ h3 {
 .pets .pets-content .button-primary {
   width: 261px;
   height: 52px;
+}
+
+.pets .pets-content .button-primary:hover {
+  cursor: pointer;
+  background-color: #FDDCC4;
+}
+
+.help {
+  width: auto;
+  height: 611px;
+}
+
+.help .help-content {
+  width: 1200px;
+  height: 432px;
+  margin: 80px auto 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.help .help-content .heading {
+  width: 312px;
+  height: 90px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.help .help-content .list {
+  max-width: 1146px;
+  max-height: 281px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.help .help-content .list .list-item {
+  margin: 0px 60px 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 113px;
+}
+
+.help .help-content .list .list-item .text {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.056em;
 }
 /*# sourceMappingURL=style.css.map */

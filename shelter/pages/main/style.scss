@@ -1,6 +1,7 @@
 $color-dark-1: #545454;
 $color-light-1: #F6F6F6;
 $color-light-s: #FAFAFA;
+$color-primary-light: #FDDCC4;
 
 %georia-regular-font {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -80,6 +81,11 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  &:hover {
+    background-color: $color-primary-light;
+    cursor: pointer;
+  }
 }
 
 .not-only {
@@ -304,6 +310,12 @@ h3{
           flex-direction: column;
           align-items: center;
           background-color: $color-light-s;
+          &:hover{
+            cursor: pointer;
+            .button{
+              background-color: $color-primary-light;
+            }
+          }
           .pet-name{
             @extend %georia-regular-font;
             color: $color-dark-1;
@@ -318,12 +330,61 @@ h3{
           }
         }
       }
-     
+    
 
     }
     .button-primary{
       width: 261px;
       height: 52px;
+      &:hover{
+        cursor: pointer;
+        background-color: $color-primary-light;
+      }
+    }
+  }
+}
+
+.help{
+  width: auto;
+  height: 611px;
+  .help-content{
+    width: 1200px;
+    height: 432px;
+    margin: 80px auto 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .heading{
+      width: 312px;
+      height: 90px;
+      @extend %georia-regular-font;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .list{
+      max-width: 1146px;
+      max-height: 281px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .list-item{
+        margin: 0px 60px 55px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 113px;
+        .text{
+          @extend %georia-regular-font;
+          font-size: 20px;          
+          line-height: 115%;
+          letter-spacing: 0.056em;
+          
+        }
+      }
     }
   }
 }
