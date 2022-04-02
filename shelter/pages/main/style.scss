@@ -2,6 +2,8 @@ $color-dark-1: #545454;
 $color-light-1: #F6F6F6;
 $color-light-s: #FAFAFA;
 $color-primary-light: #FDDCC4;
+$color-primary: #F1CDB3;
+$color-dark-m: #B2B2B2;
 
 %georia-regular-font {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -30,6 +32,7 @@ $color-primary-light: #FDDCC4;
 %arial-italic-font{
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
+  color: red;
 }
 
 body {
@@ -51,6 +54,22 @@ h3{
   font-size: 35px;
   color: color-dark-1;
   line-height: 130%;
+  letter-spacing: 0.06em;
+  margin: 0px;
+}
+
+h4{
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: $color-dark-1
+}
+
+h5{
+  @extend %georia-regular-font;
+  font-size: 15px;
+  line-height: 110%;
+  color: $color-dark-1;
   letter-spacing: 0.06em;
   margin: 0px;
 }
@@ -350,7 +369,7 @@ h3{
   .help-content{
     width: 1200px;
     height: 432px;
-    margin: 80px auto 100px;
+    margin: 80px auto 45px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -387,4 +406,68 @@ h3{
       }
     }
   }
+}
+
+.donation{
+  width: auto;
+  height: 462px;
+  background-color: $color-light-1;
+  padding-top: 80px;
+  
+  .donation-content{
+    width: 915px;
+    height: 282px;
+    display: flex;
+    margin: 0px auto;
+    justify-content: space-between;
+    align-items: center;
+
+    .donation-dog-img{
+      width: 505px;
+      height: 261px;
+    }
+    
+    .content{
+      width: 380px;
+      height: 282px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .legal-information{
+        @extend %arial-italic-font;
+        font-size: 12px;
+        line-height: 150%;
+        color: $color-dark-m;
+      }
+      .heading{
+        width: 300px;
+      }
+      .credit-card{
+        width: 349px;
+        height: 43px;
+        border-radius: 9px;
+        background-color: $color-primary;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+
+        .credit-card-img{
+          width: 30px;
+          height: 23px;
+        }
+
+        .credit-card-number{
+          @extend %georia-regular-font;
+        }
+      }
+    }
+  }
+}
+
+
+
+.credit-card-link{
+  text-decoration: none;
 }

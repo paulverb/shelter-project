@@ -1,4 +1,4 @@
-h3, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text {
+h3, h5, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text, .donation .donation-content .content .credit-card .credit-card-number {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
@@ -8,6 +8,12 @@ h3, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pe
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 15px;
+}
+
+.donation .donation-content .content .legal-information {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  color: red;
 }
 
 body {
@@ -28,6 +34,21 @@ h3 {
   font-size: 35px;
   color: color-dark-1;
   line-height: 130%;
+  letter-spacing: 0.06em;
+  margin: 0px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+h5 {
+  font-size: 15px;
+  line-height: 110%;
+  color: #545454;
   letter-spacing: 0.06em;
   margin: 0px;
 }
@@ -418,7 +439,7 @@ h3 {
 .help .help-content {
   width: 1200px;
   height: 432px;
-  margin: 80px auto 100px;
+  margin: 80px auto 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,5 +494,82 @@ h3 {
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.056em;
+}
+
+.donation {
+  width: auto;
+  height: 462px;
+  background-color: #F6F6F6;
+  padding-top: 80px;
+}
+
+.donation .donation-content {
+  width: 915px;
+  height: 282px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.donation .donation-content .donation-dog-img {
+  width: 505px;
+  height: 261px;
+}
+
+.donation .donation-content .content {
+  width: 380px;
+  height: 282px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.donation .donation-content .content .legal-information {
+  font-size: 12px;
+  line-height: 150%;
+  color: #B2B2B2;
+}
+
+.donation .donation-content .content .heading {
+  width: 300px;
+}
+
+.donation .donation-content .content .credit-card {
+  width: 349px;
+  height: 43px;
+  border-radius: 9px;
+  background-color: #F1CDB3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.donation .donation-content .content .credit-card .credit-card-img {
+  width: 30px;
+  height: 23px;
+}
+
+.credit-card-link {
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
