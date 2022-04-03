@@ -32,7 +32,11 @@ $color-dark-m: #B2B2B2;
 %arial-italic-font{
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
-  color: red;
+  
+}
+
+a{
+  text-decoration: none;
 }
 
 body {
@@ -59,10 +63,12 @@ h3{
 }
 
 h4{
+  @extend %georia-regular-font;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
-  color: $color-dark-1
+  color: $color-dark-1;
+  margin: 0px;
 }
 
 h5{
@@ -108,7 +114,6 @@ h5{
 }
 
 .not-only {
-  //background-color: red;
   background-image: url('../../assets/images/start-screen-background.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -470,4 +475,47 @@ h5{
 
 .credit-card-link{
   text-decoration: none;
+}
+
+footer{
+  width: auto;
+  height: 310px;
+  background-image: url(../../assets/images/footer-background.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 40px;
+  .footer-content{
+    width: 1200px;
+    height: 310px;
+    margin:0px auto;    
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .footer-info-box{      
+      height: 234px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 16px;
+    }
+
+    .contacts{
+      width: 279px;
+    }
+
+    .locations{
+      width: 302px;
+    }
+
+    .footer-contacts{
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-icon{
+      margin-right: 20px;
+    }
+  }
 }

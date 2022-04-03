@@ -1,4 +1,4 @@
-h3, h5, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text, .donation .donation-content .content .credit-card .credit-card-number {
+h3, h4, h5, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text, .donation .donation-content .content .credit-card .credit-card-number {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
@@ -13,7 +13,10 @@ h3, h5, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets
 .donation .donation-content .content .legal-information {
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
-  color: red;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
@@ -43,6 +46,7 @@ h4 {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
+  margin: 0px;
 }
 
 h5 {
@@ -571,5 +575,68 @@ h5 {
 
 .credit-card-link {
   text-decoration: none;
+}
+
+footer {
+  width: auto;
+  height: 310px;
+  background-image: url(../../assets/images/footer-background.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 40px;
+}
+
+footer .footer-content {
+  width: 1200px;
+  height: 310px;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .footer-content .footer-info-box {
+  height: 234px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 16px;
+}
+
+footer .footer-content .contacts {
+  width: 279px;
+}
+
+footer .footer-content .locations {
+  width: 302px;
+}
+
+footer .footer-content .footer-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer-content .footer-icon {
+  margin-right: 20px;
 }
 /*# sourceMappingURL=style.css.map */
