@@ -109,6 +109,10 @@ h5 {
   width: 187px;
 }
 
+.button-secondary:hover {
+  background-color: #FDDCC4;
+}
+
 .button-arrow {
   width: 52px;
   height: 52px;
@@ -455,10 +459,14 @@ h5 {
 
 .pets .pets-content .slider .card-container .card:hover {
   cursor: pointer;
+  -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .pets .pets-content .slider .card-container .card:hover .button {
-  background-color: #FDDCC4;
+  border: none;
+  -webkit-box-shadow: 0px 0px 5px 1px #d5e0a8;
+          box-shadow: 0px 0px 5px 1px #d5e0a8;
 }
 
 .pets .pets-content .slider .card-container .card .pet-name {

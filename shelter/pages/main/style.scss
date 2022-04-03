@@ -123,6 +123,11 @@ h5{
   border: 2px solid #F1CDB3;
   background-color: transparent;
   width: 187px;
+  &:hover{
+    background-color: $color-primary-light;
+    //border: 1px %$color-primary-light;
+    //box-shadow: none;
+  }
 }
 
 .button-arrow{
@@ -374,8 +379,11 @@ h5{
           background-color: $color-light-s;
           &:hover{
             cursor: pointer;
+            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
             .button{
-              background-color: $color-primary-light;
+              border: none;
+              box-shadow: 0px 0px 5px 1px rgb(213, 224, 168);
+              //background-color: $color-primary-light;
             }
           }
           .pet-name{
@@ -562,3 +570,5 @@ footer{
 .nav-link-active:hover{
   cursor: default;
 }
+
+
