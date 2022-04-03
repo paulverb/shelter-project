@@ -375,6 +375,7 @@ h5 {
 .about .about-content .content .subheading {
   width: 100%;
   height: auto;
+  line-height: 160%;
 }
 
 .pets {
