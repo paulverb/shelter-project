@@ -678,6 +678,10 @@ footer .footer-content .footer-info-box {
   padding-top: 16px;
 }
 
+footer .footer-content .footer-info-box .title {
+  color: #FFFFFF;
+}
+
 footer .footer-content .contacts {
   width: 279px;
 }

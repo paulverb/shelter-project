@@ -548,6 +548,9 @@ footer{
       justify-content: space-between;
       align-items: flex-start;
       padding-top: 16px;
+      .title{
+        color: $color-light-xl;
+      }
     }
 
     .contacts{
