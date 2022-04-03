@@ -46,6 +46,9 @@ a{
   &:hover{
     cursor: pointer;
   }
+  &:link, &:visited {
+    color:inherit;
+ }
 }
 
 body {
@@ -241,6 +244,7 @@ h5{
         .nav-item-active{
           color: #FAFAFA;
           border-bottom: #CDCDCD solid 3px;
+          //cursor: default;          
         }
       }
     }
@@ -551,4 +555,8 @@ footer{
       margin-right: 20px;
     }
   }
+}
+
+.nav-link-active:hover{
+  cursor: default;
 }

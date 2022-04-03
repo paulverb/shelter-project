@@ -27,6 +27,10 @@ a:hover {
   cursor: pointer;
 }
 
+a:link, a:visited {
+  color: inherit;
+}
+
 body {
   height: auto;
   width: auto;
@@ -682,5 +686,9 @@ footer .footer-content .footer-contacts {
 
 footer .footer-content .footer-icon {
   margin-right: 20px;
+}
+
+.nav-link-active:hover {
+  cursor: default;
 }
 /*# sourceMappingURL=style.css.map */
