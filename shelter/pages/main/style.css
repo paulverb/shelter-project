@@ -495,13 +495,14 @@ h5 {
 
 .help {
   width: auto;
-  height: 611px;
+  height: 531px;
+  padding-top: 80px;
 }
 
 .help .help-content {
   width: 1200px;
   height: 432px;
-  margin: 80px auto 45px;
+  margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
