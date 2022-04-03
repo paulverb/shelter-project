@@ -4,7 +4,7 @@ h3, h4, h5, .not-only .header .logo .title .logo-title, .not-only .content h2, .
   font-weight: 400;
 }
 
-.not-only .header .nav-menu .nav-list .nav-item, .not-only .content p, .about .about-content .content .subheading {
+.not-only .header .logo .subtitle, .not-only .header .nav-menu .nav-list .nav-item, .not-only .content p, .about .about-content .content .subheading {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 15px;
@@ -31,6 +31,8 @@ h1 {
 
 h2 {
   font-size: 44px;
+  margin: 0px;
+  line-height: 130%;
 }
 
 h3 {
@@ -140,6 +142,17 @@ h5 {
 
 .not-only .start-screen-content .content {
   margin-top: 163px;
+  margin-bottom: 243px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .not-only .header {
@@ -192,11 +205,13 @@ h5 {
   text-align: justify;
 }
 
-.not-only .header .logo span {
+.not-only .header .logo .subtitle {
   display: inline-block;
   font-size: 13px;
   line-height: 15px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  text-align: center;
 }
 
 .not-only .header .nav-menu {

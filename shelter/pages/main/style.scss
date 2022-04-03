@@ -4,6 +4,7 @@ $color-light-s: #FAFAFA;
 $color-primary-light: #FDDCC4;
 $color-primary: #F1CDB3;
 $color-dark-m: #B2B2B2;
+$color-light-xl: #FFFFFF;
 
 %georia-regular-font {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -51,6 +52,8 @@ h1{
 
 h2{  
   font-size: 44px;
+  margin: 0px;
+  line-height: 130%
 }
 
 h3{
@@ -144,6 +147,10 @@ h5{
 
     .content{
       margin-top: 163px;
+      margin-bottom: 243px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 
@@ -177,14 +184,18 @@ h5{
           letter-spacing: 0.053em;
           text-align: justify;
         }
+
       }
-       
-      span{
+      .subtitle{
+        @extend %arial-regular-font;
         display: inline-block;
         font-size: 13px;
         line-height: 15px;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.1em;
+        color: $color-light-xl;
+        text-align: center;
       }
+
     }
     .nav-menu{
       width: 443px;
