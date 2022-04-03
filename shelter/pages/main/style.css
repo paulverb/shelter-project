@@ -1,4 +1,4 @@
-h3, h4, h5, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text, .donation .donation-content .content .credit-card .credit-card-number {
+h3, h4, h5, .button, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text, .donation .donation-content .content .credit-card .credit-card-number {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
@@ -15,8 +15,16 @@ h3, h4, h5, .not-only .header .logo .title .logo-title, .not-only .content h2, .
   font-style: italic;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 body {
@@ -64,10 +72,31 @@ h5 {
   height: 52px;
   color: #292929;
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 .button-primary {
   background-color: #F1CDB3;
+}
+
+.button-primary:hover {
+  background-color: #FDDCC4;
 }
 
 .button-secondary {

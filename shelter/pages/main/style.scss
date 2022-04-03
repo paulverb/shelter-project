@@ -5,6 +5,7 @@ $color-primary-light: #FDDCC4;
 $color-primary: #F1CDB3;
 $color-dark-m: #B2B2B2;
 $color-light-xl: #FFFFFF;
+$color-dark-3xl: #292929;
 
 %georia-regular-font {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -36,8 +37,15 @@ $color-light-xl: #FFFFFF;
   
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a{
   text-decoration: none;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 body {
@@ -88,10 +96,24 @@ h5{
   height: 52px;
   color: #292929;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @extend %georia-regular-font;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $color-dark-3xl;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .button-primary {
   background-color: #F1CDB3;
+  &:hover{
+    background-color: $color-primary-light;
+  }
 }
 
 .button-secondary {
