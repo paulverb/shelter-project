@@ -399,7 +399,10 @@ h5{
     .button{
       border: none;
       box-shadow: 0px 0px 5px 1px rgb(213, 224, 168);
-      //background-color: $color-primary-light;
+      background-color: $color-primary;
+      &:hover{
+        background-color: $color-primary-light;
+      }
     }
   }
   .pet-name{
