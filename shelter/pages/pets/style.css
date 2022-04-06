@@ -326,6 +326,11 @@ h5 {
   border: none;
   -webkit-box-shadow: 0px 0px 5px 1px #d5e0a8;
           box-shadow: 0px 0px 5px 1px #d5e0a8;
+  background-color: #F1CDB3;
+}
+
+.card:hover .button:hover {
+  background-color: #FDDCC4;
 }
 
 .card .pet-name {
