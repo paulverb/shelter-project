@@ -84,6 +84,7 @@ h4{
   letter-spacing: 0.06em;
   color: $color-dark-1;
   margin: 0px;
+  color: $color-primary;
 }
 
 h5{
@@ -379,6 +380,7 @@ footer{
     .footer-contacts{
       display: flex;
       align-items: center;
+      color: $color-primary;
     }
 
     .footer-icon{
