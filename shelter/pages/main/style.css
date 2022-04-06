@@ -1,4 +1,4 @@
-h3, h4, h5, .button, .not-only .header .logo .title .logo-title, .not-only .content h2, .pets .pets-content .slider .card-container .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text, .donation .donation-content .content .credit-card .credit-card-number {
+h3, h4, h5, .button, .not-only .header .logo .title .logo-title, .not-only .content h2, .card .pet-name, .help .help-content .heading, .help .help-content .list .list-item .text, .donation .donation-content .content .credit-card .credit-card-number {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
@@ -431,7 +431,17 @@ h5 {
           justify-content: space-between;
 }
 
-.pets .pets-content .slider .card-container {
+.pets .pets-content .button-primary {
+  width: 261px;
+  height: 52px;
+}
+
+.pets .pets-content .button-primary:hover {
+  cursor: pointer;
+  background-color: #FDDCC4;
+}
+
+.card-container {
   width: 990px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -441,7 +451,7 @@ h5 {
           justify-content: space-between;
 }
 
-.pets .pets-content .slider .card-container .card {
+.card {
   width: 270px;
   height: 435px;
   display: -webkit-box;
@@ -457,19 +467,19 @@ h5 {
   background-color: #FAFAFA;
 }
 
-.pets .pets-content .slider .card-container .card:hover {
+.card:hover {
   cursor: pointer;
   -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
           box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
-.pets .pets-content .slider .card-container .card:hover .button {
+.card:hover .button {
   border: none;
   -webkit-box-shadow: 0px 0px 5px 1px #d5e0a8;
           box-shadow: 0px 0px 5px 1px #d5e0a8;
 }
 
-.pets .pets-content .slider .card-container .card .pet-name {
+.card .pet-name {
   color: #545454;
   font-size: 20px;
   line-height: 23px;
@@ -478,19 +488,9 @@ h5 {
   margin-bottom: 30px;
 }
 
-.pets .pets-content .slider .card-container .card .pet-img {
+.card .pet-img {
   width: 270px;
   height: 270px;
-}
-
-.pets .pets-content .button-primary {
-  width: 261px;
-  height: 52px;
-}
-
-.pets .pets-content .button-primary:hover {
-  cursor: pointer;
-  background-color: #FDDCC4;
 }
 
 .help {

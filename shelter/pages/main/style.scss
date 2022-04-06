@@ -366,42 +366,6 @@ h5{
       align-items: center;
       justify-content: space-between;
 
-      .card-container{
-        width: 990px;
-        display: flex;        
-        justify-content: space-between;
-        .card{
-          width: 270px;
-          height: 435px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          background-color: $color-light-s;
-          &:hover{
-            cursor: pointer;
-            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-            .button{
-              border: none;
-              box-shadow: 0px 0px 5px 1px rgb(213, 224, 168);
-              //background-color: $color-primary-light;
-            }
-          }
-          .pet-name{
-            @extend %georia-regular-font;
-            color: $color-dark-1;
-            font-size: 20px;
-            line-height: 23px;
-            letter-spacing: 0.06em;
-            margin-top: 30px;
-            margin-bottom: 30px;
-          }
-          .pet-img{
-            width: 270px;
-            height: 270px;
-          }
-        }
-      }
-    
 
     }
     .button-primary{
@@ -412,6 +376,43 @@ h5{
         background-color: $color-primary-light;
       }
     }
+  }
+}
+
+.card-container{
+  width: 990px;
+  display: flex;        
+  justify-content: space-between;
+}
+
+.card{
+  width: 270px;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-light-s;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    .button{
+      border: none;
+      box-shadow: 0px 0px 5px 1px rgb(213, 224, 168);
+      //background-color: $color-primary-light;
+    }
+  }
+  .pet-name{
+    @extend %georia-regular-font;
+    color: $color-dark-1;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .pet-img{
+    width: 270px;
+    height: 270px;
   }
 }
 
