@@ -572,17 +572,21 @@ h5{
 
 .donation{
   width: auto;
-  height: 382px;
+  //height: 382px;
   background-color: $color-light-1;
-  padding-top: 80px;
+  padding: 80px 182px 100px 183px;
   
   .donation-content{
-    width: 915px;
-    height: 282px;
+    //width: 915px;
+    //height: 282px;
     display: flex;
     margin: 0px auto;
     justify-content: space-between;
     align-items: center;
+    @include size-medium{
+      flex-direction: column-reverse;
+      align-items: center;
+    }
 
     .donation-dog-img{
       width: 505px;
@@ -595,6 +599,9 @@ h5{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @include size-medium{
+        margin-bottom: 60px;
+      }
 
       .legal-information{
         @extend %arial-italic-font;

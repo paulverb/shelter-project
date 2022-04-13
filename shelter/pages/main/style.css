@@ -556,18 +556,22 @@ h5 {
 
 .donation {
   width: auto;
-  height: 382px;
   background-color: #F6F6F6;
-  padding-top: 80px;
+  padding: 80px 182px 100px 183px;
 }
 
 .donation .donation-content {
-  width: 915px;
-  height: 282px;
   display: flex;
   margin: 0px auto;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 1279px) {
+  .donation .donation-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 .donation .donation-content .donation-dog-img {
@@ -581,6 +585,12 @@ h5 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 1279px) {
+  .donation .donation-content .content {
+    margin-bottom: 60px;
+  }
 }
 
 .donation .donation-content .content .legal-information {
