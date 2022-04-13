@@ -643,19 +643,31 @@ h5{
 }
 
 footer{
-  width: auto;
-  height: 310px;
+  //width: auto;
+  //height: 310px;
   background-image: url(../../assets/images/footer-background.png);
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding-top: 40px;
+  padding: 40px 30px 0;
+  @include size-medium{
+    background-image: url(../../assets/images/footer-background-768px.png);
+    background-size: 100% 100%;
+    padding-top: 30px;
+  }
   .footer-content{
-    width: 1200px;
-    height: 310px;
+    max-width: 1200px;
+    //height: 310px;
     margin:0px auto;    
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @include size-medium{
+      column-gap: 60px;
+      row-gap: 65px;
+      align-items: center;
+      justify-content: center;
+    }
 
     .footer-info-box{      
       height: 234px;
@@ -664,6 +676,9 @@ footer{
       justify-content: space-between;
       align-items: flex-start;
       padding-top: 16px;
+      @include size-medium{
+        padding-top: 0;
+      }
       .title{
         color: $color-light-xl;
       }
