@@ -517,10 +517,11 @@ h5{
   height: 531px;
   padding-top: 80px;
   .help-content{
-    width: 1200px;
-    height: 432px;
+    // width: 1200px;
+    // height: 432px;
     //margin: 80px auto 45px;
     margin: 0px auto;
+    padding: 0 87px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -534,14 +535,15 @@ h5{
     }
 
     .list{
-      max-width: 1146px;
-      max-height: 281px;
+      // max-width: 1146px;
+      // max-height: 281px;
       display: flex;
       flex-wrap: wrap;
+      gap: 55px 120px;
       justify-content: center;
 
       .list-item{
-        margin: 0px 60px 55px;
+        //margin: 0px 60px 55px;
         display: flex;
         flex-direction: column;
         align-items: center;

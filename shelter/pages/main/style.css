@@ -502,9 +502,8 @@ h5 {
 }
 
 .help .help-content {
-  width: 1200px;
-  height: 432px;
   margin: 0px auto;
+  padding: 0 87px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -518,15 +517,13 @@ h5 {
 }
 
 .help .help-content .list {
-  max-width: 1146px;
-  max-height: 281px;
   display: flex;
   flex-wrap: wrap;
+  gap: 55px 120px;
   justify-content: center;
 }
 
 .help .help-content .list .list-item {
-  margin: 0px 60px 55px;
   display: flex;
   flex-direction: column;
   align-items: center;
