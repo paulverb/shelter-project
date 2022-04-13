@@ -429,6 +429,9 @@ h5{
     padding-top: 80px;
     padding-bottom: 100px;
   }
+  @include size-small{
+    padding: 42px 0;
+  }
 
 
     img{
@@ -438,14 +441,18 @@ h5{
       @include size-medium{
         margin-left: 0;
       }
+      @include size-small{
+        width: 260px;
+        height: auto;
+        margin-top: 42px;
+      }
     }
 
   .about-content{
     width: 1200px;
     height: 408px;
+    margin: auto;
     margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     align-items: center;
     @include size-medium{
@@ -454,6 +461,7 @@ h5{
       height: auto;
       margin-top: 0;
     }
+
    .content{
      width: 430px;
      height: 380px;
@@ -465,15 +473,38 @@ h5{
      @include size-medium{
        margin: 0 0 80px;
      }
+     @include size-small{
+       width: auto;
+       height: auto;
+       padding: 0 25px;
+       row-gap: 23px;
+       margin: auto;
+     }
      .heading{
        width: 360px;
        height: 90px;
+       @include size-small{         
+         width: 260px;
+         height: 64px;
+         text-align: center;
+         margin: auto;
+         //margin-bottom: 25px;
+         h3{
+          font-size: 25px;
+         }
+       }
      }
      .subheading{
-       width: 100%;
+       //width: 100%;
+       max-width: 430px;
        height: auto;
        @extend %arial-regular-font;
        line-height: 160%;
+       @include size-small{
+         //margin-top: 22px;
+         text-align:justify;
+         //min-width: 270px;
+       }
      }
    }
   }
