@@ -669,6 +669,9 @@ h5{
   width: auto;
   //height: 531px;
   padding: 80px 0 100px;
+  @include size-small{
+    padding: 42px 15px;
+  }
   .help-content{
     // width: 1200px;
     // height: 432px;
@@ -688,6 +691,11 @@ h5{
       @extend %georia-regular-font;
       text-align: center;
       margin-bottom: 60px;
+      @include size-small{
+        width: 225px;
+        height: 64px;
+        margin-bottom: 42px;
+      }
     }
 
     .list{
@@ -700,6 +708,10 @@ h5{
       @include size-medium{
         column-gap: 60px;
       }
+      @include size-small{
+        gap: 30px 30px;
+        justify-content: start;
+      }
 
       .list-item{
         //margin: 0px 60px 55px;
@@ -711,12 +723,25 @@ h5{
         @include size-medium{
           width: 170px;
         }
+        @include size-small{
+          width: 130px;
+          height: 87px;
+        }
+        img{
+          @include size-small{
+            width: 50px;
+            height: 50px;
+          }
+        }
         .text{
           @extend %georia-regular-font;
           font-size: 20px;          
           line-height: 115%;
           letter-spacing: 0.056em;
-          
+          @include size-small{
+            font-size: 15px;
+            line-height: 110%;
+          }
         }
       }
     }
