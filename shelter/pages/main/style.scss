@@ -110,6 +110,9 @@ h3{
   line-height: 130%;
   letter-spacing: 0.06em;
   margin: 0px;
+  @include size-small{
+    font-size: 25px;
+  }
 }
 
 h4{
@@ -530,6 +533,11 @@ h5{
   height: 797px;
   background-color: $color-light-1;
   padding-top: 80px;
+  @include size-small{
+    padding-top: 42px;
+    padding-bottom: 42px;
+    height: auto;
+  }
   
   // margin-left: auto;
   // margin-right: auto;
@@ -542,23 +550,34 @@ h5{
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include size-small{
+      height: auto;
+    }
     .button{
-      //display: flex;
       height: 52px;
     }
     .heading{
       width: 400px;
       height: 90px;
       text-align: center;  
-      margin: 0px auto 60px;    
+      margin: 0px auto 60px;   
+      @include size-small{
+        margin-bottom: 42px;
+        width: 300px;
+        height: 64px;
+      } 
     }
     .slider{
       //width: 1200px;
       height: 435px;
       margin: 0px auto 60px;
       display: flex;
+      //flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      @include size-small{
+        margin-bottom: 20px;
+      }
 
     }
     .button-primary{
@@ -571,6 +590,16 @@ h5{
     }
   }
 }
+
+.for-small-screen{
+  display: none;
+  @include size-small{
+      display: flex;
+      width: 184px;
+      justify-content: space-between;
+      margin-bottom: 42px;
+    }
+  }
 
 .card-container{
   //width: 990px;
@@ -588,7 +617,20 @@ h5{
     gap: 40px;
     margin: 0 12px;
     }
+
+  @include size-small{
+    .card:nth-last-child(-n+2){
+      display: none;
+    }
   }
+}
+
+@include size-small{
+  .for-big-screen{
+    display: none;
+  }
+}
+
 .card{
   width: 270px;
   height: 435px;
