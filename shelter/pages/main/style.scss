@@ -753,6 +753,9 @@ h5{
   //height: 382px;
   background-color: $color-light-1;
   padding: 80px 182px 100px 183px;
+  @include size-small{
+    padding: 42px 0;
+  }
   
   .donation-content{
     //width: 915px;
@@ -766,9 +769,17 @@ h5{
       align-items: center;
     }
 
+
     .donation-dog-img{
       width: 505px;
       height: 261px;
+      // max-width: 505px;
+      // min-width: 260px;
+      // height: auto;
+      @include size-small{
+        width: 260px;
+        height: 135.2px;
+      }
     }
     
     .content{
@@ -780,15 +791,40 @@ h5{
       @include size-medium{
         margin-bottom: 60px;
       }
+      @include size-small{
+        width: 300px;
+        height: 281px;
+        align-items: center;
+        margin-bottom: 42px;
+      }
+      // @include size-small{
+      //   width: auto;
+      //   height: auto;
+      // }
 
       .legal-information{
         @extend %arial-italic-font;
         font-size: 12px;
         line-height: 150%;
         color: $color-dark-m;
+        @include size-small{
+          text-align: justify;
+          width: 280px;
+        }
       }
       .heading{
         width: 300px;
+        @include size-small{
+          width: 220px;
+          text-align: center;
+        }
+      }
+
+      .subheading{
+        @include size-small{
+          line-height: 160%;
+          letter-spacing: normal;
+        }
       }
       .credit-card{
         width: 349px;
@@ -798,6 +834,9 @@ h5{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        @include size-small{
+          width: 281px;
+        }
 
 
         .credit-card-img{
@@ -808,6 +847,10 @@ h5{
         .credit-card-number{
           @extend %georia-regular-font;
           color: $color-dark-1;
+          @include size-small{
+            font-size: 15px;
+            line-height: 110%;
+          }
         }
       }
     }
