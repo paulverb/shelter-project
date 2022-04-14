@@ -938,6 +938,12 @@ footer {
   }
 }
 
+@media (max-width: 767px) {
+  footer {
+    padding: 30px 10px 0;
+  }
+}
+
 footer .footer-content {
   max-width: 1200px;
   margin: 0px auto;
@@ -956,6 +962,12 @@ footer .footer-content {
   }
 }
 
+@media (max-width: 767px) {
+  footer .footer-content {
+    row-gap: 40px;
+  }
+}
+
 footer .footer-content .footer-info-box {
   height: 234px;
   display: flex;
@@ -971,8 +983,23 @@ footer .footer-content .footer-info-box {
   }
 }
 
+@media (max-width: 767px) {
+  footer .footer-content .footer-info-box {
+    height: auto;
+    row-gap: 40px;
+    align-items: center;
+  }
+}
+
 footer .footer-content .footer-info-box .title {
   color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  footer .footer-content .footer-info-box .title {
+    text-align: center;
+    width: 279px;
+  }
 }
 
 footer .footer-content .contacts {
@@ -992,7 +1019,28 @@ footer .footer-content .footer-icon {
   margin-right: 20px;
 }
 
+@media (max-width: 767px) {
+  .london {
+    text-align: start;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-puppy {
+    width: 260px;
+    height: 269px;
+  }
+}
+
 .nav-link-active:hover {
   cursor: default;
+}
+
+@media (max-width: 767px) {
+  .location-row {
+    display: flex;
+    align-self: start;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -875,6 +875,9 @@ footer{
     background-size: 100% 100%;
     padding-top: 30px;
   }
+  @include size-small{
+    padding: 30px 10px 0;
+  }
   .footer-content{
     max-width: 1200px;
     //height: 310px;
@@ -889,6 +892,9 @@ footer{
       align-items: center;
       justify-content: center;
     }
+    @include size-small{
+      row-gap: 40px;
+    }
 
     .footer-info-box{      
       height: 234px;
@@ -900,8 +906,17 @@ footer{
       @include size-medium{
         padding-top: 0;
       }
+      @include size-small{
+        height: auto;
+        row-gap: 40px;
+        align-items: center;
+      }
       .title{
         color: $color-light-xl;
+        @include size-small{
+          text-align: center;
+          width: 279px;
+        }
       }
     }
 
@@ -923,7 +938,25 @@ footer{
     }
   }
 }
+.london{
+  @include size-small{
+    text-align: start;
+    margin-right: auto;
+  }
+}
 
+.footer-puppy{
+  @include size-small{
+    width: 260px;
+    height: 269px;
+  }
+}
 .nav-link-active:hover{
   cursor: default;
+}
+.location-row{
+  @include size-small{
+    display: flex;
+    align-self: start;;
+  }
 }
