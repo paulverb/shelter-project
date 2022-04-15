@@ -40,6 +40,7 @@ $color-primary: #F1CDB3;
 $color-dark-m: #B2B2B2;
 $color-light-xl: #FFFFFF;
 $color-dark-3xl: #292929;
+$color-dark-s: #CDCDCD;
 
 $size-desctop: 767px;
 
@@ -202,7 +203,7 @@ h5{
       height: fit-content;
     }
     @include size-small{
-      padding: 30px 10px 0;
+      padding: 0px 10px 0;
     }
   }
 
@@ -294,132 +295,170 @@ h5{
     }
   }
 
-  .burger {
-    width: 30px;
-    height: 22px;
-    display: none;
-    .line {
-      width: 100%;
-      height: 2px;
-      background-color: $color-primary;
-    }
-    @include size-small{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.burger {
+  width: 30px;
+  height: 22px;
+  display: none;
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
   }
+  @include size-small{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 
 
-  .pets{
-    width: auto;
-    box-sizing: border-box;
-    height: 1342px;
-    background-color: $color-light-1;
-    padding-top: 80px;
-    .pets-content{
-      width: 1200px;
-      height: 1162px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0px auto 0px;
-      .heading{
-        width: 400px;
-        height: 90px;
-        text-align: center;
-      }
-      .cards-container{
-        box-sizing: border-box;
-        width: 100%;
-        height: 930px;
-        margin: 45px 0px;
-        display: flex;
-        flex-wrap: wrap;
-        //justify-content: space-between;
-        padding: 15px 0px;
-        gap: 30px 40px;
-  
-      }
-    }
+.pets{
+  width: auto;
+  box-sizing: border-box;
+  //height: 1342px;
+  background-color: $color-light-1;
+  // padding-top: 80px;
+  // padding-bottom: 100px;
+  padding: 80px 40px 100px;
+  @include size-medium{
+    padding: 60px 30px 70px;
   }
-  
-  .card{
-    width: 270px;
-    height: 435px;
+  @include size-small{
+    padding: 42px 0;
+  }
+  .pets-content{
+    // width: 1200px;
+    // height: 1162px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $color-light-s;
-    &:hover{
-      cursor: pointer;
-      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-      .button{
-        border: none;
-        box-shadow: 0px 0px 5px 1px rgb(213, 224, 168);
-        background-color: $color-primary;
-        &:hover{
-          background-color: $color-primary-light;
+    margin: 0px auto 0px;
+    @include size-medium{
+      margin-top: 20px;
+      padding-bottom: 6px;
+    }
+    @include size-small{
+      margin-top: 0;
+      padding-bottom: 0px;
+    }
+
+    .heading{
+      width: 400px;
+      height: 90px;
+      text-align: center;
+      @include size-small{
+        height: 64px;
+      }
+    }
+    .cards-container{
+      box-sizing: border-box;
+      width: 100%;
+      //height: 930px;
+      margin: 45px 0px;
+      display: flex;
+      flex-wrap: wrap;
+      //justify-content: space-between;
+      padding: 15px 0px;
+      //gap: 30px 40px;
+      justify-content: space-evenly;
+      row-gap: 30px;      
+      @include size-medium{
+        padding: 0;
+        margin: 30px 0 40px;
+
+        .card:nth-last-child(-n+2){
+          display: none;
         }
       }
-    }
-    .pet-name{
-      @extend %georia-regular-font;
-      color: $color-dark-1;
-      font-size: 20px;
-      line-height: 23px;
-      letter-spacing: 0.06em;
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-    .pet-img{
-      width: 270px;
-      height: 270px;
-    }
-  }
-  
-  .navigation{
-    margin: 0px auto;
-    width: 340px;
-    height: 52px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-   .button-pagignator{
-    width: 52px;
-    height: 100%;
-    border-radius: 100px;
-    text-align: center;
-    justify-content: center;
-    background-color: inherit;
-    border: 2px solid $color-primary;
-    color: $color-dark-3xl;
-    @extend %georia-regular-font;
-    font-size: 20px;
-  
-  
-    &.inactive{
-      border-color: $color-dark-s;
-      color: $color-dark-s;
-      &:hover{
-        cursor: default;
+      @include size-small{
+        .card:nth-last-child(-n+5){
+          display: none;
+        }
+        margin-top: 42px;
       }
     }
-    &.active{
+  }
+}
+
+.card{
+  width: 270px;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-light-s;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    .button{
+      border: none;
+      box-shadow: 0px 0px 5px 1px rgb(213, 224, 168);
       background-color: $color-primary;
-      &:hover{
-        cursor: default;
-      }
-    }
-  
-    &.available{
       &:hover{
         background-color: $color-primary-light;
       }
     }
-  
   }
+  .pet-name{
+    @extend %georia-regular-font;
+    color: $color-dark-1;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .pet-img{
+    width: 270px;
+    height: 270px;
+  }
+}
+
+.navigation{
+  margin: 0px auto;
+  width: 340px;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  @include size-small{
+    width: 300px;
+  }
+}
+
+  .button-pagignator{
+  width: 52px;
+  height: 100%;
+  border-radius: 100px;
+  text-align: center;
+  justify-content: center;
+  background-color: inherit;
+  border: 2px solid $color-primary;
+  color: $color-dark-3xl;
+  @extend %georia-regular-font;
+  font-size: 20px;
+
+
+  &.inactive{
+    border-color: $color-dark-s;
+    color: $color-dark-s;
+    &:hover{
+      cursor: default;
+    }
+  }
+  &.active{
+    background-color: $color-primary;
+    &:hover{
+      cursor: default;
+    }
+  }
+
+  &.available{
+    &:hover{
+      background-color: $color-primary-light;
+    }
+  }
+
+}
 
 
 
