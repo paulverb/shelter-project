@@ -144,6 +144,7 @@ h5 {
 }
 
 .not-only {
+  position: relative;
   background-image: url("../../assets/images/start-screen-background.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
