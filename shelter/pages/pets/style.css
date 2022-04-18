@@ -139,7 +139,7 @@ h5 {
 }
 
 .wrapper {
-  max-width: 1200px;
+  width: auto;
   position: fixed;
   left: 0;
   right: 0;
@@ -165,7 +165,8 @@ h5 {
 
 .header {
   height: 120px;
-  width: 100%;
+  max-width: 1200px;
+  width: calc(100% - 60px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -276,6 +277,7 @@ h5 {
 }
 
 .pets {
+  margin-top: 120px;
   width: auto;
   box-sizing: border-box;
   background-color: #F6F6F6;
