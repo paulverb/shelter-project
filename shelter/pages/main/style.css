@@ -758,6 +758,12 @@ h5 {
   }
 }
 
+@media (max-width: 320px) {
+  .help .help-content .list {
+    justify-content: start;
+  }
+}
+
 .help .help-content .list .list-item {
   display: flex;
   flex-direction: column;
