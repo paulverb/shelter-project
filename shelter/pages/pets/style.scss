@@ -192,6 +192,10 @@ h5{
   .wrapper {
     max-width: 1200px;
     //height: 100vh;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: white;
     height: auto;
     margin: auto;    
     display: flex;

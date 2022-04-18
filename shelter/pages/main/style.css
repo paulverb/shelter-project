@@ -813,6 +813,7 @@ h5 {
 
 .donation .donation-content {
   display: flex;
+  max-width: 915px;
   margin: 0px auto;
   justify-content: space-between;
   align-items: center;
