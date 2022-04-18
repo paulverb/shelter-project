@@ -366,11 +366,14 @@ h5{
       //justify-content: space-between;
       padding: 15px 0px;
       //gap: 30px 40px;
-      justify-content: space-evenly;
-      row-gap: 30px;      
+      //justify-content: space-evenly;
+      row-gap: 30px;  
+      column-gap: 40px;    
       @include size-medium{
         padding: 0;
         margin: 30px 0 40px;
+        align-items: center;
+        justify-content: center;
 
         .card:nth-last-child(-n+2){
           display: none;
