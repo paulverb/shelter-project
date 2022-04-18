@@ -1,3 +1,37 @@
+// @import "breakpoints";
+
+html{
+
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body
+{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+$breakpoints: (
+  "size-medium": 1279px,
+  "size-small": 767px,  
+);
+
+@mixin size-medium {
+  @media (max-width: map-get($breakpoints, "size-medium")) {
+    @content;
+  }
+}
+
+@mixin size-small {
+  @media (max-width:map-get($breakpoints, "size-small")) {
+    @content;
+  }
+}
+
 $color-dark-1: #545454;
 $color-light-1: #F6F6F6;
 $color-light-s: #FAFAFA;
@@ -6,6 +40,8 @@ $color-primary: #F1CDB3;
 $color-dark-m: #B2B2B2;
 $color-light-xl: #FFFFFF;
 $color-dark-3xl: #292929;
+
+$size-desctop: 767px;
 
 %georia-regular-font {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -74,6 +110,9 @@ h3{
   line-height: 130%;
   letter-spacing: 0.06em;
   margin: 0px;
+  @include size-small{
+    font-size: 25px;
+  }
 }
 
 h4{
@@ -93,6 +132,11 @@ h5{
   color: $color-dark-1;
   letter-spacing: 0.06em;
   margin: 0px;
+}
+
+.container{
+  max-width: 1280px;
+  margin: auto;
 }
 
 .button {
@@ -156,25 +200,70 @@ h5{
   height: 908px;
   // max-width: 1200px;
 
+  @include size-medium{
+    width: auto;
+    height:auto;
+    //min-height: 100px;
+    //overflow: hidden;
+    background-image: url('../../assets/images/start-screen-background-768.jpg');
+  }
+
+  @include size-small{
+    background-image: url('../../assets/images/start-screen-gradient-background-320px.png');
+  }
+
   .wrapper {
     max-width: 1200px;
-    height: 100vh;
+    //height: 100vh;
+    height: auto;
     margin: auto;    
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    @include size-medium{
+      // padding-left: 30px;
+      // padding-right: 30px;
+      height: fit-content;
+    }
+    @include size-small{
+      padding: 30px 10px 0;
+    }
   }
 
   .start-screen-content{
-    width: 1200px;
-    height: 728px;
+    max-width: 1200px;
+    //max-height: 728px;
+    height: auto;
     margin-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    column-gap: 40px;
+    @include size-medium{
+      width: calc(100% - 200px);
+      //background-color: red;
+      display: flex;
+      flex-direction: column;
+      //height: fit-content;
+      margin-top: 0;
+      height: auto;
+    }
+    .start-screen-puppy{
+      max-width: 100%;
+      min-width: 260px;
+      height: auto;
+      @include size-medium{
+        width: 100%;
+        height: auto;
+        margin-left: 140px;
+        //margin-right: -170px;
+      }
+      @include size-small{
+        margin-left: 40px;
+      }
+    }
 
     .content{
       margin-top: 163px;
@@ -182,6 +271,13 @@ h5{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @include size-medium{
+        margin-top: 60px;
+        margin-bottom: 100px;
+      }
+      @include size-small{
+        margin-bottom: 105px;
+      }
     }
   }
 
@@ -193,6 +289,17 @@ h5{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    @include size-medium{
+      width: calc(100% - 60px);
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-top: 30px;
+      //flex-shrink: 1;
+    }
+    @include size-small {
+      margin: 0 43px 0 0;
+      width: calc(100% - 43px);
+    }
 
     .logo {
       display: flex;
@@ -234,6 +341,9 @@ h5{
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @include size-small{
+        display: none;
+      }
       .nav-list{
         width: 100%;
         list-style: none;
@@ -256,15 +366,46 @@ h5{
     }
   }
 
+  .burger {
+    width: 30px;
+    height: 22px;
+    display: none;
+    .line {
+      width: 100%;
+      height: 2px;
+      background-color: $color-primary;
+    }
+    @include size-small{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
   .content {
     width: 460px;
     height: 322px;
+    @include size-small{
+      height: auto;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 42px;
+    }
 
     h2 {
       width: 310px;
       height: 114px;
       color: white;
       @extend %georia-regular-font;
+      @include size-small{
+        font-size: 25px;
+        letter-spacing: 0.06em;
+        width: 250px;
+        text-align: center;
+        height: 64px;
+      }
     }
 
     p{
@@ -274,10 +415,20 @@ h5{
       @extend %arial-regular-font;
       font-size: 15px;
       line-height: 160%;
+      @include size-small{
+        width: 300px;
+        height: auto;
+        text-align: center;
+        margin: 0;
+      }
     }
 
     .button {
       width: 207px;
+      @include size-medium{
+        display: flex;
+        align-self: center;
+      }
     }
   }
 
@@ -295,21 +446,45 @@ h5{
   display: flex;
   align-self: center;
   justify-content: center;
+  @include size-medium{
+    width: auto;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  @include size-small{
+    padding: 42px 0;
+  }
+
 
     img{
       width: 300px;
       height: 408px;
       margin-left: 175px;
+      @include size-medium{
+        margin-left: 0;
+      }
+      @include size-small{
+        width: 260px;
+        height: auto;
+        margin-top: 42px;
+      }
     }
 
   .about-content{
     width: 1200px;
     height: 408px;
+    margin: auto;
     margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     align-items: center;
+    @include size-medium{
+      flex-direction: column-reverse;
+      width: auto;
+      height: auto;
+      margin-top: 0;
+    }
+
    .content{
      width: 430px;
      height: 380px;
@@ -318,55 +493,96 @@ h5{
      display: flex;
      flex-direction: column;
      justify-content: space-between;
+     @include size-medium{
+       margin: 0 0 80px;
+     }
+     @include size-small{
+       width: auto;
+       height: auto;
+       padding: 0 25px;
+       row-gap: 23px;
+       margin: auto;
+     }
      .heading{
        width: 360px;
        height: 90px;
+       @include size-small{         
+         width: 260px;
+         height: 64px;
+         text-align: center;
+         margin: auto;
+         //margin-bottom: 25px;
+         h3{
+          font-size: 25px;
+         }
+       }
      }
      .subheading{
-       width: 100%;
+       //width: 100%;
+       max-width: 430px;
        height: auto;
        @extend %arial-regular-font;
        line-height: 160%;
+       @include size-small{
+         //margin-top: 22px;
+         text-align:justify;
+         //min-width: 270px;
+       }
      }
    }
   }
 }
 
 .pets{
-  width: auto;
+  width: 100vw;
   height: 797px;
   background-color: $color-light-1;
   padding-top: 80px;
+  @include size-small{
+    padding-top: 42px;
+    padding-bottom: 42px;
+    height: auto;
+  }
   
   // margin-left: auto;
   // margin-right: auto;
   
   .pets-content{
-    width: 1200px;
+    //width: 1200px;
     height: 697px;
     margin: 0px auto;
     //margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include size-small{
+      height: auto;
+    }
     .button{
-      //display: flex;
       height: 52px;
     }
     .heading{
       width: 400px;
       height: 90px;
       text-align: center;  
-      margin: 0px auto 60px;    
+      margin: 0px auto 60px;   
+      @include size-small{
+        margin-bottom: 42px;
+        width: 300px;
+        height: 64px;
+      } 
     }
     .slider{
-      width: 1200px;
+      //width: 1200px;
       height: 435px;
       margin: 0px auto 60px;
       display: flex;
+      //flex-direction: column;
       align-items: center;
       justify-content: space-between;
-
+      @include size-small{
+        margin-bottom: 20px;
+      }
 
     }
     .button-primary{
@@ -380,10 +596,44 @@ h5{
   }
 }
 
+.for-small-screen{
+  display: none;
+  @include size-small{
+      display: flex;
+      width: 184px;
+      justify-content: space-between;
+      margin-bottom: 42px;
+    }
+  }
+
 .card-container{
-  width: 990px;
-  display: flex;        
+  //width: 990px;
+  display: flex;   
+  gap: 90px;     
   justify-content: space-between;
+  margin: 0 53px;
+
+
+
+  @include size-medium{
+    .card:nth-last-child(-n+1){
+      display: none;
+      }
+    gap: 40px;
+    margin: 0 12px;
+    }
+
+  @include size-small{
+    .card:nth-last-child(-n+2){
+      display: none;
+    }
+  }
+}
+
+@include size-small{
+  .for-big-screen{
+    display: none;
+  }
 }
 
 .card{
@@ -422,16 +672,23 @@ h5{
 
 .help{
   width: auto;
-  height: 531px;
-  padding-top: 80px;
+  //height: 531px;
+  padding: 80px 0 100px;
+  @include size-small{
+    padding: 42px 15px;
+  }
   .help-content{
-    width: 1200px;
-    height: 432px;
+    // width: 1200px;
+    // height: 432px;
     //margin: 80px auto 45px;
     margin: 0px auto;
+    padding: 0 87px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include size-medium{
+      padding: 0;
+    }
 
     .heading{
       width: 312px;
@@ -439,28 +696,60 @@ h5{
       @extend %georia-regular-font;
       text-align: center;
       margin-bottom: 60px;
+      @include size-small{
+        width: 225px;
+        height: 64px;
+        margin-bottom: 42px;
+      }
     }
 
     .list{
-      max-width: 1146px;
-      max-height: 281px;
+      // max-width: 1146px;
+      // max-height: 281px;
       display: flex;
       flex-wrap: wrap;
+      gap: 55px 120px;
       justify-content: center;
+      @include size-medium{
+        column-gap: 60px;
+      }
+      @include size-small{
+        gap: 30px 30px;
+        //justify-content: start;
+      }
+      @media (max-width: 320px) {
+        justify-content: start;
+      }
 
       .list-item{
-        margin: 0px 60px 55px;
+        //margin: 0px 60px 55px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         height: 113px;
+        @include size-medium{
+          width: 170px;
+        }
+        @include size-small{
+          width: 130px;
+          height: 87px;
+        }
+        img{
+          @include size-small{
+            width: 50px;
+            height: 50px;
+          }
+        }
         .text{
           @extend %georia-regular-font;
           font-size: 20px;          
           line-height: 115%;
           letter-spacing: 0.056em;
-          
+          @include size-small{
+            font-size: 15px;
+            line-height: 110%;
+          }
         }
       }
     }
@@ -469,21 +758,37 @@ h5{
 
 .donation{
   width: auto;
-  height: 382px;
+  //height: 382px;
   background-color: $color-light-1;
-  padding-top: 80px;
+  padding: 80px 182px 100px 183px;
+  @include size-small{
+    padding: 42px 0;
+  }
   
   .donation-content{
-    width: 915px;
-    height: 282px;
+    //width: 915px;
+    //height: 282px;
     display: flex;
+    max-width: 915px;
     margin: 0px auto;
     justify-content: space-between;
     align-items: center;
+    @include size-medium{
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
 
     .donation-dog-img{
       width: 505px;
       height: 261px;
+      // max-width: 505px;
+      // min-width: 260px;
+      // height: auto;
+      @include size-small{
+        width: 260px;
+        height: 135.2px;
+      }
     }
     
     .content{
@@ -492,15 +797,43 @@ h5{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @include size-medium{
+        margin-bottom: 60px;
+      }
+      @include size-small{
+        width: 300px;
+        height: 281px;
+        align-items: center;
+        margin-bottom: 42px;
+      }
+      // @include size-small{
+      //   width: auto;
+      //   height: auto;
+      // }
 
       .legal-information{
         @extend %arial-italic-font;
         font-size: 12px;
         line-height: 150%;
         color: $color-dark-m;
+        @include size-small{
+          text-align: justify;
+          width: 280px;
+        }
       }
       .heading{
         width: 300px;
+        @include size-small{
+          width: 220px;
+          text-align: center;
+        }
+      }
+
+      .subheading{
+        @include size-small{
+          line-height: 160%;
+          letter-spacing: normal;
+        }
       }
       .credit-card{
         width: 349px;
@@ -510,6 +843,9 @@ h5{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        @include size-small{
+          width: 281px;
+        }
 
 
         .credit-card-img{
@@ -520,6 +856,10 @@ h5{
         .credit-card-number{
           @extend %georia-regular-font;
           color: $color-dark-1;
+          @include size-small{
+            font-size: 15px;
+            line-height: 110%;
+          }
         }
       }
     }
@@ -533,19 +873,37 @@ h5{
 }
 
 footer{
-  width: auto;
-  height: 310px;
+  //width: auto;
+  //height: 310px;
   background-image: url(../../assets/images/footer-background.png);
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding-top: 40px;
+  padding: 40px 30px 0;
+  @include size-medium{
+    background-image: url(../../assets/images/footer-background-768px.png);
+    background-size: 100% 100%;
+    padding-top: 30px;
+  }
+  @include size-small{
+    padding: 30px 10px 0;
+  }
   .footer-content{
-    width: 1200px;
-    height: 310px;
+    max-width: 1200px;
+    //height: 310px;
     margin:0px auto;    
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @include size-medium{
+      column-gap: 60px;
+      row-gap: 65px;
+      align-items: center;
+      justify-content: center;
+    }
+    @include size-small{
+      row-gap: 40px;
+    }
 
     .footer-info-box{      
       height: 234px;
@@ -554,8 +912,20 @@ footer{
       justify-content: space-between;
       align-items: flex-start;
       padding-top: 16px;
+      @include size-medium{
+        padding-top: 0;
+      }
+      @include size-small{
+        height: auto;
+        row-gap: 40px;
+        align-items: center;
+      }
       .title{
         color: $color-light-xl;
+        @include size-small{
+          text-align: center;
+          width: 279px;
+        }
       }
     }
 
@@ -577,9 +947,25 @@ footer{
     }
   }
 }
+.london{
+  @include size-small{
+    text-align: start;
+    margin-right: auto;
+  }
+}
 
+.footer-puppy{
+  @include size-small{
+    width: 260px;
+    height: 269px;
+  }
+}
 .nav-link-active:hover{
   cursor: default;
 }
-
-
+.location-row{
+  @include size-small{
+    display: flex;
+    align-self: start;;
+  }
+}
