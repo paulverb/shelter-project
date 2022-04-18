@@ -755,7 +755,6 @@ h5 {
 @media (max-width: 767px) {
   .help .help-content .list {
     gap: 30px 30px;
-    justify-content: start;
   }
 }
 
