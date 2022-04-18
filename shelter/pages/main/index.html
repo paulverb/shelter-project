@@ -26,6 +26,11 @@
             <li class="nav-item"><a href="#footer" class="nav-link">Contacts</a></li>
           </ul>
         </nav>
+        <div class="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
       </header>
       <div class="start-screen-content">
         <div class="content">
@@ -36,8 +41,8 @@
               Make a friend
             </a>
           
-        </div>    
-        <img  src="../../assets/images/start-screen-puppy.png" alt="puppy image">
+        </div>        
+        <img class="start-screen-puppy" src="../../assets/images/start-screen-puppy.png" alt="puppy image">
       </div>
      </div>
   </div>
@@ -50,13 +55,12 @@
         <div class="subheading">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</div>
       </div>
     </div>
-
   </div>
   <div class="pets" id="pets">
     <div class="pets-content">
       <div class="heading"><h3>Our friends who<br/>are looking for a house</h3></div>
       <div class="slider">
-        <button class="button-arrow"><img src="../../assets/images/Arrow-left.png" alt=""></button>
+        <button class="button-arrow for-big-screen arrow-left"><img src="../../assets/images/Arrow-left.png" alt=""></button>
         <div class="card-container">
           <div class="card">
             <div class="pet-img"><img src="../../assets/images/pets-katrine.png" alt="pet photo"></div>
@@ -74,13 +78,18 @@
             <button class="button button-secondary">Learn more</button>
           </div>   
         </div>     
-        <button class="button-arrow"><img src="../../assets/images/Arrow-right.png" alt=""></button>
+        <button class="button-arrow for-big-screen arrow-right"><img src="../../assets/images/Arrow-right.png" alt=""></button>
+                
+      </div>
+      <div class="for-small-screen">
+        <button class="button-arrow arrow-left"><img src="../../assets/images/Arrow-left.png" alt=""></button>
+        <button class="button-arrow arrow-right"><img src="../../assets/images/Arrow-right.png" alt=""></button>
       </div>
       <a href="../pets/index.html" class="button button-primary">Get to know the rest</a>
     </div>
   </div>
   
-  <div class="help" id="help">
+  <div class="help container" id="help">
     <div class="help-content">
       <h3 class="heading">How you can help our shelter</h3>
       <div class="list">
@@ -125,12 +134,14 @@
   </div>
 
   <div class="donation">
+    <div class="container">  
+
     <div class="donation-content">
       <img src="../../assets/images/donation-dog.png" alt="dog image" class="donation-dog-img">
       <div class="content">
         <h3 class="heading">You can also make a donation</h3>
         <h5 class="subheading">Name of the bank / Type of bank account</h5>
-        <a href="" onclick="return false;" class="credit-card-link">
+        <a href="##" class="credit-card-link">
           <div class="credit-card">
             <img src="../../assets/icons/credit-card.png" alt="credit card image" class="credit-card-img">
             <h4 class="credit-card-number">8380 2880 8028 8791 7435</h4>
@@ -140,6 +151,7 @@
         
       </div>
     </div>
+  </div>
   </div>
 
   <footer class="footer" id="footer">
@@ -162,13 +174,13 @@
       
       <div class="footer-info-box locations">
         <h3 class="title">We are waiting for your visit</h3>
-        <a href="https://bit.ly/3NLnndG" target="_blank">
+        <a href="https://bit.ly/3NLnndG" target="_blank" class="location-row">
           <div class="footer-contacts boston">
             <img src="../../assets/icons/icon-marker.png" alt="geo icon" class="footer-icon">
             <h4 class="boston-address">1 Central Street, Boston (entrance from the store)</h4>
           </div>
         </a>
-        <a href="https://bit.ly/3wW7yuR" target="_blank">
+        <a href="https://bit.ly/3wW7yuR" target="_blank" class="location-row">
           <div class="footer-contacts london">
             <img src="../../assets/icons/icon-marker.png" alt="geo icon" class="footer-icon">
             <h4 class="phone-number">18 South Park, London </h4>
