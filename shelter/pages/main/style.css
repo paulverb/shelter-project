@@ -1104,11 +1104,12 @@ footer .footer-content .footer-icon {
 .mobile-menu .nav-menu {
   width: 243px;
   height: 327px;
-  margin: 158px auto 0;
+  display: flex;
+  margin: auto;
 }
 
 .mobile-menu .nav-menu .nav-list {
-  height: 100%;
+  height: auto;
   list-style: none;
   display: flex;
   flex-direction: column;

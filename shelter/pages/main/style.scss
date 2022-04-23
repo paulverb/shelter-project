@@ -1028,12 +1028,13 @@ footer{
     //align-items: center;
     //justify-content: space-between;
     //margin: auto auto;
-    margin: 158px auto 0;
+    display: flex;
+    margin: auto;
     
 
     .nav-list{
       //max-width: 243px;
-      height: 100%;
+      height: auto;
       //margin: auto;
       list-style: none;
       display: flex;
