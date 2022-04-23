@@ -1127,4 +1127,131 @@ footer .footer-content .footer-icon {
   color: #FAFAFA;
   border-bottom: #F1CDB3 solid 3px;
 }
+
+@keyframes move-left-large {
+  from {
+    left: -1096px;
+  }
+  to {
+    left: -2192px;
+  }
+}
+
+@keyframes move-left-medium {
+  from {
+    left: -600px;
+  }
+  to {
+    left: -1200px;
+  }
+}
+
+@keyframes move-left-small {
+  from {
+    left: -305px;
+  }
+  to {
+    left: -610px;
+  }
+}
+
+@keyframes move-right-large {
+  from {
+    left: -1096px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes move-right-medium {
+  from {
+    left: -604px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes move-left-small {
+  from {
+    left: -305px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.transition-left {
+  animation-name: move-left-large;
+  animation-duration: 3s;
+}
+
+@media (max-width: 1279px) {
+  .transition-left {
+    animation-name: move-left-medium;
+    animation-duration: 3s;
+  }
+}
+
+@media (max-width: 767px) {
+  .transition-left {
+    animation-name: move-left-small;
+    animation-duration: 3s;
+  }
+}
+
+.transition-right {
+  animation-name: move-right-large;
+  animation-duration: 3s;
+}
+
+@media (max-width: 1279px) {
+  .transition-right {
+    animation-name: move-right-medium;
+    animation-duration: 3s;
+  }
+}
+
+@media (max-width: 767px) {
+  .transition-right {
+    animation-name: move-right-small;
+    animation-duration: 3s;
+  }
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 1096px;
+}
+
+@media (max-width: 1279px) {
+  .carousel-wrapper {
+    width: 604px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-wrapper {
+    width: 270px;
+  }
+}
+
+.carousel {
+  display: flex;
+  position: relative;
+  left: -1096px;
+}
+
+@media (max-width: 1279px) {
+  .carousel {
+    left: -600px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel {
+    left: -305px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

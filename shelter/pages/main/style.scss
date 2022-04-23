@@ -1056,3 +1056,95 @@ footer{
     }
   }
 }
+
+
+@keyframes move-left-large {
+  from {left: -1096px;}
+  to {left: -2192px;}
+}
+
+@keyframes move-left-medium {
+  from {left: -600px;}
+  to {left: -1200px;}
+}
+
+@keyframes move-left-small{
+  from {left: -305px;}
+  to {left: -610px;}
+}
+
+@keyframes move-right-large {
+  from {left: -1096px;}
+  to {left: 0px;}
+}
+
+@keyframes move-right-medium {
+  from {left: -604px}
+  to {left: 0}
+}
+
+@keyframes move-left-small{
+  from {left: -305px;}
+  to {left: 0px;}
+}
+
+.transition-left {
+  animation-name: move-left-large;
+  animation-duration: 3s;
+
+  @include size-medium{
+    animation-name: move-left-medium;
+    animation-duration: 3s;
+  }
+
+  @include size-small{
+    animation-name: move-left-small;
+    animation-duration: 3s;
+  }
+}
+
+
+.transition-right {
+  animation-name: move-right-large;
+  animation-duration: 3s;
+
+  @include size-medium{
+    animation-name: move-right-medium;
+    animation-duration: 3s;
+  }
+
+  @include size-small{
+    animation-name: move-right-small;
+    animation-duration: 3s;
+  }
+}
+
+
+.carousel-wrapper{
+  overflow: hidden;
+  width: 1096px;
+
+  @include size-medium {
+    width: 604px;
+  }
+
+  @include size-small{
+    width: 270px;
+  }
+}
+
+.carousel{
+  display: flex;
+  position: relative;
+
+  left: -1096px;
+
+  @include size-medium {
+
+    left: -600px;
+  }
+  @include size-small{
+
+    left: -305px;
+  }
+}
