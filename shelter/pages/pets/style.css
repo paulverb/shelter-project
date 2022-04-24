@@ -340,18 +340,14 @@ h5 {
   .pets .pets-content .cards-container {
     padding: 0;
     margin: 30px 0 40px;
-  }
-  .pets .pets-content .cards-container .card:nth-last-child(-n+2) {
-    display: none;
+    column-gap: 40px;
   }
 }
 
 @media (max-width: 767px) {
   .pets .pets-content .cards-container {
     margin-top: 42px;
-  }
-  .pets .pets-content .cards-container .card:nth-last-child(-n+5) {
-    display: none;
+    column-gap: 40px;
   }
 }
 

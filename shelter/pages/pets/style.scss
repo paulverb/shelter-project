@@ -366,16 +366,17 @@ h5{
       @include size-medium{
         padding: 0;
         margin: 30px 0 40px;
-
-        .card:nth-last-child(-n+2){
-          display: none;
-        }
+        column-gap: 40px;
+        // .card:nth-last-child(-n+2){
+        //   display: none;
+        // }
       }
       @include size-small{
-        .card:nth-last-child(-n+5){
-          display: none;
-        }
+        // .card:nth-last-child(-n+5){
+        //   display: none;
+        // }
         margin-top: 42px;
+        column-gap: 40px;
       }
     }
   }

@@ -295,8 +295,8 @@ const moveRight = () => {
 
 
 
-let acivePets = chooseNRandom(petsJson, 3)
-let nextPets = chooseNRandom(petsJson, 3, acivePets)
+let activePets = chooseNRandom(petsJson, 3)
+let nextPets = chooseNRandom(petsJson, 3, activePets)
 
 
 btnLeft.addEventListener('click', moveLeft)
@@ -304,7 +304,7 @@ btnRight.addEventListener('click', moveRight)
 btnLeftForSmallScreen.addEventListener('click', moveLeft)
 btnRightForSmallScreen.addEventListener('click', moveRight)
 
-// cardContainerOne.innerHTML = makeInnerHtmlOfContainer(acivePets)
+// cardContainerOne.innerHTML = makeInnerHtmlOfContainer(activePets)
 
 const populateContainer = (container, chosenPets) => {
   container.innerHTML = '';
@@ -321,8 +321,8 @@ const populateContainer = (container, chosenPets) => {
 
 const onAnimationEnd = () => {
   cardContainerTwo.innerHTML = cardContainerOne.innerHTML;
-  acivePets = nextPets;
-  nextPets = chooseNRandom(petsJson, 3, acivePets);
+  activePets = nextPets;
+  nextPets = chooseNRandom(petsJson, 3, activePets);
   populateContainer(cardContainerOne, nextPets);
   populateContainer(cardContainerThree, nextPets);
   carousel.classList.remove('transition-left');
@@ -332,7 +332,7 @@ const onAnimationEnd = () => {
   // btnLeftForSmallScreen.addEventListener()
 }
 
-populateContainer(cardContainerTwo, acivePets)
+populateContainer(cardContainerTwo, activePets)
 populateContainer(cardContainerOne, nextPets)
 populateContainer(cardContainerThree, nextPets)
 

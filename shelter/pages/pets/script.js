@@ -158,4 +158,144 @@ burgerItems.forEach( (item)=> item.addEventListener('click', closeMobile ))
 
 // end burger ============================================
 
-burger.addEventListener('click', ()=> console.log('burger clicked'))
+// start pagination =======================================
+const firstPageBtn = document.querySelector('#first-page-btn')
+const prevPageBtn = document.querySelector('#prev-page-btn')
+const currentPageBtn = document.querySelector('#current-page-btn')
+const nextPageBtn = document.querySelector('#next-page-btn')
+const lastPageBtn = document.querySelector('#last-page-btn')
+const allCards = document.querySelectorAll('.card')
+const cardsContainer = document.querySelector('.cards-container')
+
+
+
+const shuffleArray = (unshuffled) => {
+  let shuffled = unshuffled
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+  return shuffled;
+}
+
+
+const countVisibleCards = (cards) => {
+  let numberOfVisibleCards = 0;
+  for(let card of cards) {
+    if (getComputedStyle(card).display !== 'none') {
+      numberOfVisibleCards++;
+    }
+  }
+  return numberOfVisibleCards;
+}
+
+const makeArrayOf48Pets = (petsJson, visibleCardsCount) => {
+  let result = [];
+  if(visibleCardsCount === 8) {
+    for(let i = 0; i < 6; i++) {
+      result.push(...shuffleArray(petsJson))
+    }
+  } else {
+    const shuffledArray = shuffleArray(petsJson);
+    result = [].concat(...Array(6).fill(shuffledArray))
+  }
+  return result;
+}
+
+const populateContainerOnPagePets = (container, arrayOf48Pets) => {
+  container.innerHTML = '';
+  for(let i = 0; i < visibleCardsCount; i++) {
+    let card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `<div class="pet-img"><img src="${arrayOf48Pets[currentPetArrayStartIndex]['img']}" alt="pet photo"></div>
+    <p class="pet-name">${arrayOf48Pets[currentPetArrayStartIndex]['name']}</p>
+    <button class="button button-secondary">Learn more</button>`
+    container.append(card)
+    currentPetArrayStartIndex++;
+  }
+}
+
+const makeBtnsAvailable = (btnOne, btnTwo) => {
+  btnOne.classList.remove('inactive');
+  btnOne.classList.add('available');
+  btnTwo.classList.remove('inactive');
+  btnTwo.classList.add('available');
+}
+
+const makeBtnsInactive = (btnOne, btnTwo) => {
+  btnOne.classList.add('inactive');
+  btnOne.classList.remove('available');
+  btnTwo.classList.add('inactive');
+  btnTwo.classList.remove('available');
+}
+
+const clickNextPageBtn = () => {
+  if(!(nextPageBtn.classList.contains('inactive'))){
+    populateContainerOnPagePets(cardsContainer, arrayOf48Pets);
+    currentPageBtn.innerHTML = currentPetArrayStartIndex / visibleCardsCount;
+    makeBtnsAvailable(prevPageBtn, firstPageBtn)
+
+    if (currentPetArrayStartIndex === arrayOf48Pets.length) {
+      makeBtnsInactive(nextPageBtn, lastPageBtn);
+    } 
+  }
+}
+
+const clickLastPageBtn = () =>{
+  if(!(lastPageBtn.classList.contains('inactive'))){
+    currentPetArrayStartIndex = arrayOf48Pets.length - visibleCardsCount;
+    populateContainerOnPagePets(cardsContainer, arrayOf48Pets);
+    currentPageBtn.innerHTML = currentPetArrayStartIndex / visibleCardsCount;
+    makeBtnsAvailable(prevPageBtn, firstPageBtn);
+    makeBtnsInactive(nextPageBtn, lastPageBtn);
+  }
+}
+
+const clickPrevPageBtn = () => {
+  if(!(prevPageBtn.classList.contains('inactive'))) {
+    currentPetArrayStartIndex -= 2 * visibleCardsCount;
+    populateContainerOnPagePets(cardsContainer, arrayOf48Pets)
+    currentPageBtn.innerHTML = +currentPageBtn.innerHTML - 1;
+    makeBtnsAvailable(nextPageBtn, lastPageBtn)  
+    console.log(currentPetArrayStartIndex)  
+  }
+  if (currentPageBtn.innerHTML == '1') {
+    makeBtnsInactive(prevPageBtn, firstPageBtn);
+  }
+}
+
+const clickFirstPageBtn = () => {
+  if(!(firstPageBtn.classList.contains('inactive'))) {
+    currentPetArrayStartIndex = 0;
+    populateContainerOnPagePets(cardsContainer, arrayOf48Pets)
+    currentPageBtn.innerHTML = 1;
+    makeBtnsAvailable(nextPageBtn, lastPageBtn);
+    makeBtnsInactive(firstPageBtn, prevPageBtn);
+  }
+}
+
+
+
+const cardNumberOnPage = () => {
+  if (window.innerWidth < 768) {
+    return 3;
+  } else if (window.innerWidth < 1280) {
+    return 6;
+  } else {return 8}
+}
+
+let visibleCardsCount = cardNumberOnPage()
+let currentPage = +currentPageBtn.innerHTML;
+let currentPetArrayStartIndex = 0;
+
+// window.addEventListener('load', onWindowLoad)
+
+let arrayOf48Pets = makeArrayOf48Pets(petsJson, visibleCardsCount);
+populateContainerOnPagePets(cardsContainer, arrayOf48Pets)
+
+nextPageBtn.addEventListener('click', clickNextPageBtn);
+lastPageBtn.addEventListener('click', clickLastPageBtn);
+prevPageBtn.addEventListener('click', clickPrevPageBtn);
+firstPageBtn.addEventListener('click', clickFirstPageBtn);
+
+console.log(arrayOf48Pets)
+
