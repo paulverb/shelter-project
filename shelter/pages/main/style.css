@@ -1143,7 +1143,7 @@ footer .footer-content .footer-icon {
     left: -600px;
   }
   to {
-    left: -1200px;
+    left: -1204px;
   }
 }
 
@@ -1152,7 +1152,7 @@ footer .footer-content .footer-icon {
     left: -305px;
   }
   to {
-    left: -610px;
+    left: -598px;
   }
 }
 
@@ -1170,54 +1170,54 @@ footer .footer-content .footer-icon {
     left: -604px;
   }
   to {
-    left: 0;
+    left: 4px;
   }
 }
 
-@keyframes move-left-small {
+@keyframes move-right-small {
   from {
     left: -305px;
   }
   to {
-    left: 0px;
+    left: -12px;
   }
 }
 
 .transition-left {
   animation-name: move-left-large;
-  animation-duration: 3s;
+  animation-duration: 0.3s;
 }
 
 @media (max-width: 1279px) {
   .transition-left {
     animation-name: move-left-medium;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
   }
 }
 
 @media (max-width: 767px) {
   .transition-left {
     animation-name: move-left-small;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
   }
 }
 
 .transition-right {
   animation-name: move-right-large;
-  animation-duration: 3s;
+  animation-duration: 0.3s;
 }
 
 @media (max-width: 1279px) {
   .transition-right {
     animation-name: move-right-medium;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
   }
 }
 
 @media (max-width: 767px) {
   .transition-right {
     animation-name: move-right-small;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
   }
 }
 

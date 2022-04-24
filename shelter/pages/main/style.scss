@@ -1066,12 +1066,12 @@ footer{
 
 @keyframes move-left-medium {
   from {left: -600px;}
-  to {left: -1200px;}
+  to {left: -1204px;}
 }
 
 @keyframes move-left-small{
   from {left: -305px;}
-  to {left: -610px;}
+  to {left: -598px;}
 }
 
 @keyframes move-right-large {
@@ -1081,42 +1081,42 @@ footer{
 
 @keyframes move-right-medium {
   from {left: -604px}
-  to {left: 0}
+  to {left: 4px}
 }
 
-@keyframes move-left-small{
+@keyframes move-right-small{
   from {left: -305px;}
-  to {left: 0px;}
+  to {left: -12px;}
 }
 
 .transition-left {
   animation-name: move-left-large;
-  animation-duration: 3s;
+  animation-duration: 0.3s;
 
   @include size-medium{
     animation-name: move-left-medium;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
   }
 
   @include size-small{
     animation-name: move-left-small;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
   }
 }
 
 
 .transition-right {
   animation-name: move-right-large;
-  animation-duration: 3s;
+  animation-duration: 0.3s;
 
   @include size-medium{
     animation-name: move-right-medium;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
   }
 
   @include size-small{
     animation-name: move-right-small;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
   }
 }
 
