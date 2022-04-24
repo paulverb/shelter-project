@@ -329,6 +329,7 @@ const onAnimationEnd = () => {
   carousel.classList.remove('transition-right');
   btnLeft.addEventListener('click', moveLeft);
   btnRight.addEventListener('click', moveRight);
+  // btnLeftForSmallScreen.addEventListener()
 }
 
 populateContainer(cardContainerTwo, acivePets)

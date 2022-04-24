@@ -16,7 +16,7 @@ h3, h4, h5, .button, .header .logo .title .logo-title, .card .pet-name, .button-
   font-weight: 400;
 }
 
-.header .logo .subtitle, .header .nav-menu .nav-list .nav-item {
+.header .logo .subtitle, .header .nav-menu .nav-list .nav-item, .mobile-menu .nav-menu .nav-list .nav-item {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 15px;
@@ -139,6 +139,7 @@ h5 {
 }
 
 .wrapper {
+  position: relative;
   max-width: 1200px;
   height: auto;
   margin: auto;
@@ -558,5 +559,133 @@ footer .footer-content .footer-icon {
     display: flex;
     align-self: start;
   }
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.mobile-menu {
+  width: 320px;
+  height: 100vh;
+  top: 0;
+  right: -320px;
+  padding-top: 30px;
+  background-color: white;
+  position: absolute;
+  transition: right 0.5s;
+  transition-duration: 500ms;
+}
+
+.mobile-menu.active {
+  display: block;
+  color: red;
+  right: 0px;
+  z-index: 5;
+}
+
+.dark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: none;
+}
+
+.darkened {
+  display: block;
+  background-color: rgba(41, 41, 41, 0.6);
+}
+
+.footer-puppy {
+  transition-duration: 3s;
+}
+
+.footer-puppy:active {
+  display: none;
+}
+
+.hide-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobile-menu {
+  position: absolute;
+  height: 100vh;
+}
+
+.mobile-menu .nav-menu {
+  width: 243px;
+  height: 327px;
+  display: flex;
+  margin: auto;
+}
+
+.mobile-menu .nav-menu .nav-list {
+  height: auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0px;
+}
+
+.mobile-menu .nav-menu .nav-list .nav-item {
+  font-size: 32px;
+  line-height: 160%;
+  color: #545454;
+}
+
+.mobile-menu .nav-menu .nav-list .nav-item-active {
+  color: #292929;
+  border-bottom: #F1CDB3 solid 3px;
+}
+
+.burger {
+  width: 30px;
+  height: 22px;
+  display: none;
+  transition: all 0.5s;
+}
+
+.burger.opened {
+  transform: rotate(90deg);
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+@media (max-width: 767px) {
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+  }
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */
