@@ -684,4 +684,49 @@ body {
   max-width: 100%;
   overflow: hidden;
 }
+
+.popup-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-open {
+  display: flex;
+}
+
+.popup {
+  position: relative;
+  width: 80%;
+  height: calc(width * 5 / 9);
+  background-color: white;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .popup .popup-pet-img {
+    display: none;
+  }
+}
+
+.popup h4 {
+  color: black;
+}
+
+.popup-btn {
+  position: absolute;
+  right: -45px;
+  top: -52px;
+}
+
+.btn-active {
+  background-color: #FDDCC4;
+}
 /*# sourceMappingURL=style.css.map */

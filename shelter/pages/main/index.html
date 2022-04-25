@@ -85,7 +85,7 @@
       </div>
     </div>
   </div>
-  <div class="pets" id="pets">
+  <div class="pets" id="pets">    
     <div class="pets-content">
       <div class="heading"><h3>Our friends who<br/>are looking for a house</h3></div>
       <div class="slider">
@@ -221,5 +221,33 @@
     </div>
   </footer>  
   <div class="dark"></div>
+  <div class="popup-container">
+    <div class="popup">
+      <button class="button-arrow popup-btn">
+        <img class="also-closes" src="../../assets/icons/x-in-button.png" alt="">
+      </button>
+      <img class="popup-pet-img" src=""></img>
+      <div class="popup-content">
+        <h3 data-pet="name"></h3>
+        <h4><span data-pet="type"></span><span> - </span><span data-pet="breed"></span></h4>
+        <h5 data-pet="description"></h5>
+        <ul>
+          <li>
+            <span>Age: </span><span data-pet="age"></span>
+          </li>
+          <li>
+            <span>Inoculations: </span><span data-pet="inoculations"></span>
+          </li>
+          <li>
+            <span>Diseases: </span><span data-pet="diseases"></span>
+          </li>
+          <li>
+            <span>Parasites: </span><span data-pet="parasites"></span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>

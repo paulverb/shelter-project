@@ -164,7 +164,7 @@ const prevPageBtn = document.querySelector('#prev-page-btn')
 const currentPageBtn = document.querySelector('#current-page-btn')
 const nextPageBtn = document.querySelector('#next-page-btn')
 const lastPageBtn = document.querySelector('#last-page-btn')
-const allCards = document.querySelectorAll('.card')
+let allCards = document.querySelectorAll('.card')
 const cardsContainer = document.querySelector('.cards-container')
 
 
@@ -299,3 +299,64 @@ firstPageBtn.addEventListener('click', clickFirstPageBtn);
 
 console.log(arrayOf48Pets)
 
+//================= popup =================================
+// let allCards = document.querySelectorAll('.card')
+const popupContainer = document.querySelector('.popup-container')
+const popup = document.querySelector('.popup');
+const popupBtn = document.querySelector('.popup-btn')
+const alsoCloses = document.querySelector('.also-closes')
+
+
+const openPopup = (e) => {
+  let petCard = e.currentTarget;
+  popupContainer.classList.add('flex-open')
+  body.classList.add('hide-scroll')
+  const petName = petCard.childNodes[2].innerHTML;
+  let currentPet;
+  petsJson.forEach( pet => {
+    if (pet.name === petName) {
+      currentPet = pet;
+    }
+  })
+  // console.log(currentPet)
+  let petImg = popup.querySelector('.popup-pet-img');
+  // console.log(petImg)
+  petImg.src = currentPet['img'];
+  for (let i of popup.querySelectorAll('[data-pet]')) {
+    let field = i.getAttribute('data-pet')
+    i.innerHTML = currentPet[field]
+  }
+}
+
+const closePopup = (e) => {
+  if (e.target === popupContainer || e.target === popupBtn || e.target === alsoCloses) {
+    popupContainer.classList.remove('flex-open')
+    body.classList.remove('hide-scroll')
+  }
+}
+
+const makeBtnActive = (e) => {
+  console.log(e.target)
+  if (e.target === popupContainer || e.target === popupBtn) {
+    popupBtn.classList.add('btn-active')
+  } else {
+    popupBtn.classList.remove('btn-active')
+  }
+}
+allCards = document.querySelectorAll('.card')
+
+allCards.forEach( card => card.addEventListener('click', ()=> console.log('card clicked')))
+// body.addEventListener('click', (e)=> console.log(e.target))
+
+popupContainer.addEventListener('mouseover', makeBtnActive)
+popupContainer.addEventListener('click', closePopup)
+body.addEventListener('click', (e)=> console.log(e.target))
+// carousel.addEventListener('animationend', ()=> {allCards = document.querySelectorAll('.card')})
+allCards.forEach( card => card.addEventListener('click', openPopup))
+
+
+const paginationBtns = document.querySelectorAll('.button-pagignator')
+paginationBtns.forEach(btn => btn.addEventListener('click', ()=> {
+  allCards = document.querySelectorAll('.card');
+  allCards.forEach( card => card.addEventListener('click', openPopup))
+}))

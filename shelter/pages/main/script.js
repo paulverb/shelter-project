@@ -315,7 +315,7 @@ const populateContainer = (container, chosenPets) => {
     <p class="pet-name">${chosenPets[i]['name']}</p>
     <button class="button button-secondary">Learn more</button>`
     container.append(card)
-    console.log(container)
+    // console.log(container)
   }
 }
 
@@ -338,3 +338,60 @@ populateContainer(cardContainerThree, nextPets)
 
 
 carousel.addEventListener('animationend', onAnimationEnd)
+
+
+//================= popup =================================
+let allCards = document.querySelectorAll('.card')
+const popupContainer = document.querySelector('.popup-container')
+const popup = document.querySelector('.popup');
+const popupBtn = document.querySelector('.popup-btn')
+const alsoCloses = document.querySelector('.also-closes')
+
+const openPopup = (e) => {
+  let petCard = e.currentTarget;
+  popupContainer.classList.add('flex-open')
+  body.classList.add('hide-scroll')
+  const petName = petCard.childNodes[2].innerHTML;
+  let currentPet;
+  petsJson.forEach( pet => {
+    if (pet.name === petName) {
+      currentPet = pet;
+    }
+  })
+  // console.log(currentPet)
+  let petImg = popup.querySelector('.popup-pet-img');
+  // console.log(petImg)
+  petImg.src = currentPet['img'];
+  for (let i of popup.querySelectorAll('[data-pet]')) {
+    let field = i.getAttribute('data-pet')
+    i.innerHTML = currentPet[field]
+  }
+}
+
+const closePopup = (e) => {
+  if (e.target === popupContainer || e.target === popupBtn || e.target === alsoCloses) {
+    popupContainer.classList.remove('flex-open')
+    body.classList.remove('hide-scroll')
+  }
+}
+
+const makeBtnActive = (e) => {
+  console.log(e.target)
+  if (e.target === popupContainer || e.target === popupBtn) {
+    popupBtn.classList.add('btn-active')
+  } else {
+    popupBtn.classList.remove('btn-active')
+  }
+}
+
+cards.forEach( card => card.addEventListener('click', ()=> console.log('card clicked')))
+// body.addEventListener('click', (e)=> console.log(e.target))
+
+popupContainer.addEventListener('mouseover', makeBtnActive)
+popupContainer.addEventListener('click', closePopup)
+body.addEventListener('click', (e)=> console.log(e.target))
+carousel.addEventListener('animationend', ()=> {
+  allCards = document.querySelectorAll('.card');
+  allCards.forEach( card => card.addEventListener('click', openPopup))
+})
+allCards.forEach( card => card.addEventListener('click', openPopup))
